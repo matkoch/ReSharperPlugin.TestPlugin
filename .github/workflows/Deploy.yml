@@ -18,5 +18,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: output
-          path: ${{ github.event.repository.name }}.${{ github.ref_name }}
+          name: ${{ github.event.repository.name }}.${{ github.ref_name }}
+          path: output

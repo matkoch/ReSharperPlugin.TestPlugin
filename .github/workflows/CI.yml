@@ -21,8 +21,8 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          path: output
           name: ${{ github.event.repository.name }}.CI.${{ github.ref_name }}
+          path: output
   Test:
     runs-on: windows-latest
     steps:

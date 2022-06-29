@@ -78,6 +78,16 @@ task compileDotNet {
     }
 }
 
+task testDotNet {
+    doLast {
+        exec {
+            executable "dotnet"
+            args "test","${DotnetSolution}"
+            workingDir rootDir
+        }
+    }
+}
+
 buildPlugin {
     doLast {
         copy {

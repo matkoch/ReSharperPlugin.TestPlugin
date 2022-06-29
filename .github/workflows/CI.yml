@@ -18,7 +18,7 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-Build-${{ hashFiles('gradlew.bat', 'src/dotnet/*/*.csproj', 'src/dotnet/*.props', 'gradle-wrapper.properties') }}
       - run: ./gradlew :buildPlugin --no-daemon
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v3
         with:
           path: ${{ github.event.repository.name }}.CI.${{ github.run_number }}.nupkg
   Test:

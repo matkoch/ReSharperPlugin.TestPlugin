@@ -19,4 +19,4 @@ jobs:
         with:
           if: always()
           name: output
-          path: output
+          path: ${{ github.event.repository.name }}.${{ github.ref_name }}

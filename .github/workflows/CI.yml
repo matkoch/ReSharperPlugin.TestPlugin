@@ -22,7 +22,7 @@ jobs:
         with:
           if: always()
           path: output
-          name: output
+          name: ${{ github.event.repository.name }}.CI.${{ github.ref_name }}
   Test:
     runs-on: windows-latest
     steps:

@@ -20,8 +20,7 @@ jobs:
       - run: ./gradlew :buildPlugin --no-daemon
       - uses: actions/upload-artifact@v1
         with:
-          name: ${{ github.event.repository.name }}.CI.${{ github.run_number }}
-          path: output
+          path: output/*
   Test:
     runs-on: windows-latest
     steps:

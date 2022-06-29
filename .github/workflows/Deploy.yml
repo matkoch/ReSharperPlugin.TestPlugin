@@ -16,7 +16,7 @@ jobs:
         env:
           PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
-          if: always()
           name: output
           path: ${{ github.event.repository.name }}.${{ github.ref_name }}

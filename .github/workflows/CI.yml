@@ -21,9 +21,15 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           path: output/${{ github.event.repository.name }}.9999.0.0.nupkg
+          name: ${{ github.event.repository.name }}.CI.${{ github.run_number }}.nupkg
       - uses: actions/upload-artifact@v3
         with:
           path: output/${{ github.event.repository.name }}-9999.0.0.zip
+          name: ${{ github.event.repository.name }}-CI.${{ github.run_number }}.zip
+      - uses: actions/upload-artifact@v3
+        with:
+          path: output
+          name: output
   Test:
     runs-on: windows-latest
     steps:

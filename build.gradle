@@ -82,7 +82,7 @@ task testDotNet {
     doLast {
         exec {
             executable "dotnet"
-            args "test","${DotnetSolution}"
+            args "test","${DotnetSolution}","--logger","GitHubActions"
             workingDir rootDir
         }
     }

@@ -20,7 +20,10 @@ jobs:
       - run: ./gradlew :buildPlugin --no-daemon
       - uses: actions/upload-artifact@v3
         with:
-          path: output/${{ github.event.repository.name }}.CI.${{ github.run_number }}.nupkg
+          path: output/*.nupkg
+      - uses: actions/upload-artifact@v3
+        with:
+          path: output/*.zip
   Test:
     runs-on: windows-latest
     steps:

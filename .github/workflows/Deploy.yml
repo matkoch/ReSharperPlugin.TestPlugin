@@ -15,7 +15,8 @@ jobs:
       - run: ./gradlew :publishPlugin -PBuildConfiguration="Release" -PPluginVersion="${{ github.ref_name }}" -PPublishToken="${{ env.PUBLISH_TOKEN }}"
         env:
           PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v3
         with:
-          name: ${{ github.event.repository.name }}.${{ github.ref_name }}
+          if: always()
+          name: output
           path: output

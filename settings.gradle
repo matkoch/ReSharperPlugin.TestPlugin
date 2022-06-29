@@ -17,6 +17,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'testplugin'
+rootProject.name = 'RiderPlugin.TestPlugin'
 
 include ':protocol'
